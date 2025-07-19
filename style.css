@@ -1,57 +1,6 @@
 /* style.css */
 
-/* ==================================== */
-/* 1. ブランドカラー (コーポレートカラー) */
-/* ==================================== */
-:root {
-  --color-brand-red: #E4002B;
-  --color-brand-blue: #005BAC;
-  --color-neutral-white: #FFFFFF;
-  --color-neutral-dark-gray: #333333;
-
-  /* =========================== */
-  /* 2. UIカラー (Webサイト・アプリ用) */
-  /* =========================== */
-
-  /* テキストカラー */
-  --color-ui-text-main: #333333;
-  --color-ui-text-sub: #666666;
-  --color-ui-text-emphasis: #E4002B;
-
-  /* 背景カラー */
-  --color-ui-bg-main: #FFFFFF;
-  --color-ui-bg-section: #F8F8F8;
-
-  /* ボタンカラー - プライマリ (最も重要なアクション) */
-  --color-ui-btn-primary-bg-normal: #005BAC;
-  --color-ui-btn-primary-text-normal: #FFFFFF;
-  --color-ui-btn-primary-bg-hover: #004A99;
-  --color-ui-btn-primary-text-hover: #FFFFFF;
-  --color-ui-btn-primary-bg-active: #003B80;
-  --color-ui-btn-primary-text-active: #FFFFFF;
-  --color-ui-btn-primary-bg-disabled: #CCCCCC;
-  --color-ui-btn-primary-text-disabled: #999999;
-
-  /* ボタンカラー - セカンダリ (補助的なアクション) */
-  --color-ui-btn-secondary-bg-normal: #FFFFFF;
-  --color-ui-btn-secondary-border-normal: #005BAC;
-  --color-ui-btn-secondary-text-normal: #005BAC;
-  --color-ui-btn-secondary-bg-hover: #F2F2F2;
-  --color-ui-btn-secondary-border-hover: #005BAC;
-  --color-ui-btn-secondary-text-hover: #005BAC;
-
-  /* ボタンカラー - 危険/警告 (注意を要するアクション) */
-  --color-ui-btn-danger-bg-normal: #DC3545;
-  --color-ui-btn-danger-text-normal: #FFFFFF;
-
-  /* 状態メッセージカラー */
-  --color-ui-status-success-bg: #D4EDDA;
-  --color-ui-status-success-text: #155724;
-  --color-ui-status-error-bg: #F8D7DA;
-  --color-ui-status-error-text: #721C24;
-  --color-ui-status-info-bg: #CCE5FF;
-  --color-ui-status-info-text: #004085;
-}
+/* ... (既存の :root 変数定義は省略) ... */
 
 /* 基本的なスタイリング */
 body {
@@ -70,8 +19,7 @@ body {
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
-    /* ここを修正：全体のコンテンツを中央に配置 */
-    align-items: center; /* Flexアイテム（headerとcontent-wrapper）を中央に寄せる */
+    align-items: center;
 }
 
 header {
@@ -82,19 +30,18 @@ header {
     background-color: var(--color-ui-bg-section);
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     flex-shrink: 0;
-    width: calc(100% - 40px); /* content-wrapperのパディングを考慮して幅を設定 */
-    max-width: 1200px; /* 必要に応じて最大幅を設定 */
-    box-sizing: border-box; /* パディングを幅に含める */
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
 .content-wrapper {
     display: flex;
-    /* メインコンテンツとサイドバーの順序をここで制御 */
-    flex-direction: row; /* 横並びを明示的に指定 */
+    flex-direction: row;
     padding: 0 20px 20px 20px;
     flex-grow: 1;
-    width: calc(100% - 40px); /* main-content-wrapperの左右パディングを考慮 */
-    max-width: 1200px; /* headerと同じ最大幅を設定 */
+    width: calc(100% - 40px);
+    max-width: 1200px;
     box-sizing: border-box;
     align-items: flex-start;
 }
@@ -102,25 +49,23 @@ header {
 main {
     flex-grow: 1;
     padding: 0;
-    /* ここを修正：メインコンテンツとサイドバーの順序変更 */
-    order: 1; /* mainを先に表示（左側） */
-    margin-right: 30px; /* サイドバーとの間隔 */
+    order: 1;
+    margin-right: 30px;
 }
 
 .sidebar {
     width: 250px;
     padding: 20px;
     background-color: var(--color-ui-bg-section);
-    border-left: 1px solid #eee; /* 左側に境界線 */
-    border-right: none; /* 元の右側の境界線を削除 */
-    box-shadow: -2px 0 5px rgba(0,0,0,0.05); /* シャドウの方向を調整 */
+    border-left: 1px solid #eee;
+    border-right: none;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.05);
     height: fit-content;
     position: sticky;
     top: 20px;
     align-self: flex-start;
-    /* ここを修正：メインコンテンツとサイドバーの順序変更 */
-    order: 2; /* sidebarを後から表示（右側） */
-    margin-right: 0; /* 元のmargin-rightを削除 */
+    order: 2;
+    margin-right: 0;
     border-radius: 6px;
 }
 
@@ -200,10 +145,15 @@ main {
     color: var(--color-ui-text-main);
 }
 
-.color-hex {
-    font-family: 'Courier New', monospace;
-    font-size: 0.8em;
+/* ここを修正：コードのフォントを見やすくする */
+.color-hex,
+.color-rgb,
+.color-hsl {
+    font-family: 'Roboto Mono', 'Courier New', monospace; /* プログラミング用フォントを追加 */
+    font-size: 0.75em; /* 少し小さくして複数行でも収まりやすく */
     color: var(--color-ui-text-sub);
+    margin: 2px 0; /* 行間を調整 */
+    line-height: 1.2; /* 行の高さを調整 */
 }
 
 /* コピー成功時のフィードバック */
@@ -218,32 +168,32 @@ main {
     header {
         margin-bottom: 15px;
         padding: 15px;
-        width: 100%; /* レスポンシブ時は幅いっぱい */
-        max-width: none; /* 最大幅を解除 */
+        width: 100%;
+        max-width: none;
     }
     .content-wrapper {
-        flex-direction: column; /* 縦並びに戻す */
+        flex-direction: column;
         padding: 0 15px 15px 15px;
-        width: 100%; /* レスポンシブ時は幅いっぱい */
-        max-width: none; /* 最大幅を解除 */
+        width: 100%;
+        max-width: none;
     }
     main {
-        order: 1; /* レスポンシブ時はmainが上 */
-        margin-right: 0; /* マージンを解除 */
-        margin-bottom: 20px; /* サイドバーとの間隔 */
+        order: 1;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
     .sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #eee;
-        margin-bottom: 0; /* mainとの間隔はmainが持つ */
-        position: static; /* レスポンシブ時はstickyを解除 */
+        margin-bottom: 0;
+        position: static;
         top: auto;
         margin-right: 0;
         border-radius: 6px 6px 0 0;
-        order: 2; /* レスポンシブ時はsidebarが下 */
-        border-left: none; /* 左側の境界線を解除 */
-        box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* シャドウを通常に */
+        order: 2;
+        border-left: none;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
     .color-grid {
         grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
@@ -259,7 +209,10 @@ main {
     .color-name {
         font-size: 0.8em;
     }
-    .color-hex {
-        font-size: 0.7em;
+    /* レスポンシブ時のコードフォントサイズ調整 */
+    .color-hex,
+    .color-rgb,
+    .color-hsl {
+        font-size: 0.65em; /* さらに小さく */
     }
 }
