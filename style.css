@@ -1,0 +1,144 @@
+/* style.css */
+
+/* ==================================== */
+/* 1. ブランドカラー (コーポレートカラー) */
+/* ==================================== */
+:root {
+  --color-brand-red: #E4002B;
+  --color-brand-blue: #005BAC;
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-dark-gray: #333333;
+
+  /* =========================== */
+  /* 2. UIカラー (Webサイト・アプリ用) */
+  /* =========================== */
+
+  /* テキストカラー */
+  --color-ui-text-main: #333333;
+  --color-ui-text-sub: #666666;
+  --color-ui-text-emphasis: #E4002B;
+
+  /* 背景カラー */
+  --color-ui-bg-main: #FFFFFF;
+  --color-ui-bg-section: #F8F8F8;
+
+  /* ボタンカラー - プライマリ (最も重要なアクション) */
+  --color-ui-btn-primary-bg-normal: #005BAC;
+  --color-ui-btn-primary-text-normal: #FFFFFF;
+  --color-ui-btn-primary-bg-hover: #004A99;
+  --color-ui-btn-primary-text-hover: #FFFFFF;
+  --color-ui-btn-primary-bg-active: #003B80;
+  --color-ui-btn-primary-text-active: #FFFFFF;
+  --color-ui-btn-primary-bg-disabled: #CCCCCC;
+  --color-ui-btn-primary-text-disabled: #999999;
+
+  /* ボタンカラー - セカンダリ (補助的なアクション) */
+  --color-ui-btn-secondary-bg-normal: #FFFFFF;
+  --color-ui-btn-secondary-border-normal: #005BAC;
+  --color-ui-btn-secondary-text-normal: #005BAC;
+  --color-ui-btn-secondary-bg-hover: #F2F2F2;
+  --color-ui-btn-secondary-border-hover: #005BAC;
+  --color-ui-btn-secondary-text-hover: #005BAC;
+
+  /* ボタンカラー - 危険/警告 (注意を要するアクション) */
+  --color-ui-btn-danger-bg-normal: #DC3545;
+  --color-ui-btn-danger-text-normal: #FFFFFF;
+
+  /* 状態メッセージカラー */
+  --color-ui-status-success-bg: #D4EDDA;
+  --color-ui-status-success-text: #155724;
+  --color-ui-status-error-bg: #F8D7DA;
+  --color-ui-status-error-text: #721C24;
+  --color-ui-status-info-bg: #CCE5FF;
+  --color-ui-status-info-text: #004085;
+}
+
+/* 基本的なスタイリング */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--color-ui-bg-main);
+    color: var(--color-ui-text-main);
+}
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--color-brand-blue);
+}
+
+.color-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--color-ui-bg-section);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.color-item {
+    flex: 0 0 calc(25% - 15px);
+    max-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: var(--color-neutral-white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.color-name {
+    font-weight: bold;
+    margin: 5px 0;
+    color: var(--color-ui-text-main);
+}
+
+.color-hex {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--color-ui-text-sub);
+}
+
+/* レスポンシブ対応 (例) */
+@media (max-width: 768px) {
+    .color-item {
+        flex: 0 0 calc(33.33% - 13.33px);
+    }
+}
+
+@media (max-width: 480px) {
+    .color-item {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
