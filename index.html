@@ -7,12 +7,183 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-content-wrapper"> <header>
+    <div class="main-content-wrapper">
+        <header>
             <h1>[あなたのプロジェクト名] カラーガイドライン</h1>
             <p>このページは、ブランドおよびUIの公式カラーパレットを定義します。</p>
         </header>
 
-        <div class="content-wrapper"> <aside class="sidebar">
+        <div class="content-wrapper">
+            <main>
+                <section class="color-section">
+                    <h2>1. ブランドカラー (コーポレートカラー) 🎨</h2>
+                    <div class="color-grid">
+                        <div class="color-item" data-color-name="Brand Red" data-hex="#E4002B" data-rgb="rgb(228, 0, 43)" data-hsl="hsl(349, 100%, 45%)">
+                            <div class="color-box" style="background-color: var(--color-brand-red);"></div>
+                            <p class="color-name">ブランドレッド</p>
+                            <p class="color-hex">#E4002B</p>
+                            <p class="color-rgb">RGB: 228, 0, 43</p>
+                            <p class="color-hsl">HSL: 349, 100%, 45%</p>
+                        </div>
+                        <div class="color-item" data-color-name="Brand Blue" data-hex="#005BAC" data-rgb="rgb(0, 91, 172)" data-hsl="hsl(209, 100%, 34%)">
+                            <div class="color-box" style="background-color: var(--color-brand-blue);"></div>
+                            <p class="color-name">ブランドブルー</p>
+                            <p class="color-hex">#005BAC</p>
+                            <p class="color-rgb">RGB: 0, 91, 172</p>
+                            <p class="color-hsl">HSL: 209, 100%, 34%)</p>
+                        </div>
+                        <div class="color-item" data-color-name="White" data-hex="#FFFFFF" data-rgb="rgb(255, 255, 255)" data-hsl="hsl(0, 0%, 100%)">
+                            <div class="color-box" style="background-color: var(--color-neutral-white); border: 1px solid #ccc;"></div>
+                            <p class="color-name">ホワイト</p>
+                            <p class="color-hex">#FFFFFF</p>
+                            <p class="color-rgb">RGB: 255, 255, 255</p>
+                            <p class="color-hsl">HSL: 0, 0%, 100%</p>
+                        </div>
+                        <div class="color-item" data-color-name="Dark Gray" data-hex="#333333" data-rgb="rgb(51, 51, 51)" data-hsl="hsl(0, 0%, 20%)">
+                            <div class="color-box" style="background-color: var(--color-neutral-dark-gray);"></div>
+                            <p class="color-name">ダークグレー</p>
+                            <p class="color-hex">#333333</p>
+                            <p class="color-rgb">RGB: 51, 51, 51</p>
+                            <p class="color-hsl">HSL: 0, 0%, 20%</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="color-section">
+                    <h2>2. UIカラー (Webサイト・アプリ用) 💻</h2>
+                    <h3>2.1. テキストカラー</h3>
+                    <div class="color-grid">
+                        <div class="color-item" data-color-name="Main Text" data-hex="#333333" data-rgb="rgb(51, 51, 51)" data-hsl="hsl(0, 0%, 20%)">
+                            <div class="color-box" style="background-color: var(--color-ui-text-main);"></div>
+                            <p class="color-name">メインテキスト</p>
+                            <p class="color-hex">#333333</p>
+                            <p class="color-rgb">RGB: 51, 51, 51</p>
+                            <p class="color-hsl">HSL: 0, 0%, 20%</p>
+                        </div>
+                         <div class="color-item" data-color-name="Sub Text" data-hex="#666666" data-rgb="rgb(102, 102, 102)" data-hsl="hsl(0, 0%, 40%)">
+                            <div class="color-box" style="background-color: var(--color-ui-text-sub);"></div>
+                            <p class="color-name">サブテキスト</p>
+                            <p class="color-hex">#666666</p>
+                            <p class="color-rgb">RGB: 102, 102, 102</p>
+                            <p class="color-hsl">HSL: 0, 0%, 40%</p>
+                        </div>
+                        <div class="color-item" data-color-name="Emphasis Text" data-hex="#E4002B" data-rgb="rgb(228, 0, 43)" data-hsl="hsl(349, 100%, 45%)">
+                            <div class="color-box" style="background-color: var(--color-ui-text-emphasis);"></div>
+                            <p class="color-name">強調テキスト</p>
+                            <p class="color-hex">#E4002B</p>
+                            <p class="color-rgb">RGB: 228, 0, 43</p>
+                            <p class="color-hsl">HSL: 349, 100%, 45%</p>
+                        </div>
+                    </div>
+
+                    <h3>2.2. 背景カラー</h3>
+                    <div class="color-grid">
+                        <div class="color-item" data-color-name="Main Background" data-hex="#FFFFFF" data-rgb="rgb(255, 255, 255)" data-hsl="hsl(0, 0%, 100%)">
+                            <div class="color-box" style="background-color: var(--color-ui-bg-main); border: 1px solid #ccc;"></div>
+                            <p class="color-name">メイン背景</p>
+                            <p class="color-hex">#FFFFFF</p>
+                            <p class="color-rgb">RGB: 255, 255, 255</p>
+                            <p class="color-hsl">HSL: 0, 0%, 100%</p>
+                        </div>
+                        <div class="color-item" data-color-name="Section Background" data-hex="#F8F8F8" data-rgb="rgb(248, 248, 248)" data-hsl="hsl(0, 0%, 97%)">
+                            <div class="color-box" style="background-color: var(--color-ui-bg-section);"></div>
+                            <p class="color-name">セクション背景</p>
+                            <p class="color-hex">#F8F8F8</p>
+                            <p class="color-rgb">RGB: 248, 248, 248</p>
+                            <p class="color-hsl">HSL: 0, 0%, 97%)</p>
+                        </div>
+                    </div>
+
+                    <h3>2.3. ボタンカラー</h3>
+                    <h4>プライマリボタン</h4>
+                    <div class="color-grid">
+                         <div class="color-item" data-color-name="Primary Button Normal" data-hex="#005BAC" data-rgb="rgb(0, 91, 172)" data-hsl="hsl(209, 100%, 34%)">
+                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-normal);"></div>
+                            <p class="color-name">通常</p>
+                            <p class="color-hex">#005BAC</p>
+                            <p class="color-rgb">RGB: 0, 91, 172</p>
+                            <p class="color-hsl">HSL: 209, 100%, 34%)</p>
+                        </div>
+                        <div class="color-item" data-color-name="Primary Button Hover" data-hex="#004A99" data-rgb="rgb(0, 74, 153)" data-hsl="hsl(209, 100%, 30%)">
+                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-hover);"></div>
+                            <p class="color-name">ホバー</p>
+                            <p class="color-hex">#004A99</p>
+                            <p class="color-rgb">RGB: 0, 74, 153</p>
+                            <p class="color-hsl">HSL: 209, 100%, 30%)</p>
+                        </div>
+                        <div class="color-item" data-color-name="Primary Button Active" data-hex="#003B80" data-rgb="rgb(0, 59, 128)" data-hsl="hsl(209, 100%, 25%)">
+                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-active);"></div>
+                            <p class="color-name">アクティブ</p>
+                            <p class="color-hex">#003B80</p>
+                            <p class="color-rgb">RGB: 0, 59, 128</p>
+                            <p class="color-hsl">HSL: 209, 100%, 25%)</p>
+                        </div>
+                        <div class="color-item" data-color-name="Primary Button Disabled" data-hex="#CCCCCC" data-rgb="rgb(204, 204, 204)" data-hsl="hsl(0, 0%, 80%)">
+                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-disabled);"></div>
+                            <p class="color-name">無効</p>
+                            <p class="color-hex">#CCCCCC</p>
+                            <p class="color-rgb">RGB: 204, 204, 204</p>
+                            <p class="color-hsl">HSL: 0, 0%, 80%)</p>
+                        </div>
+                    </div>
+
+                    <h4>セカンダリボタン</h4>
+                    <div class="color-grid">
+                         <div class="color-item" data-color-name="Secondary Button Normal" data-hex="#FFFFFF" data-rgb="rgb(255, 255, 255)" data-hsl="hsl(0, 0%, 100%)">
+                            <div class="color-box" style="background-color: var(--color-ui-btn-secondary-bg-normal); border: 1px solid var(--color-ui-btn-secondary-border-normal);"></div>
+                            <p class="color-name">通常</p>
+                            <p class="color-hex">#FFFFFF</p>
+                            <p class="color-rgb">RGB: 255, 255, 255</p>
+                            <p class="color-hsl">HSL: 0, 0%, 100%)</p>
+                        </div>
+                        <div class="color-item" data-color-name="Secondary Button Hover" data-hex="#F2F2F2" data-rgb="rgb(242, 242, 242)" data-hsl="hsl(0, 0%, 95%)">
+                            <div class="color-box" style="background-color: var(--color-ui-btn-secondary-bg-hover); border: 1px solid var(--color-ui-btn-secondary-border-hover);"></div>
+                            <p class="color-name">ホバー</p>
+                            <p class="color-hex">#F2F2F2</p>
+                            <p class="color-rgb">RGB: 242, 242, 242</p>
+                            <p class="color-hsl">HSL: 0, 0%, 95%)</p>
+                        </div>
+                    </div>
+
+                    <h4>危険/警告ボタン</h4>
+                    <div class="color-grid">
+                        <div class="color-item" data-color-name="Danger Button Normal" data-hex="#DC3545" data-rgb="rgb(220, 53, 69)" data-hsl="hsl(354, 70%, 54%)">
+                            <div class="color-box" style="background-color: var(--color-ui-btn-danger-bg-normal);"></div>
+                            <p class="color-name">通常</p>
+                            <p class="color-hex">#DC3545</p>
+                            <p class="color-rgb">RGB: 220, 53, 69</p>
+                            <p class="color-hsl">HSL: 354, 70%, 54%)</p>
+                        </div>
+                    </div>
+
+                    <h3>2.4. 状態メッセージカラー</h3>
+                    <div class="color-grid">
+                        <div class="color-item" data-color-name="Success Message Background" data-hex="#D4EDDA" data-rgb="rgb(212, 237, 218)" data-hsl="hsl(120, 39%, 88%)">
+                            <div class="color-box" style="background-color: var(--color-ui-status-success-bg);"></div>
+                            <p class="color-name">成功メッセージ</p>
+                            <p class="color-hex">#D4EDDA</p>
+                            <p class="color-rgb">RGB: 212, 237, 218</p>
+                            <p class="color-hsl">HSL: 120, 39%, 88%)</p>
+                        </div>
+                        <div class="color-item" data-color-name="Error Message Background" data-hex="#F8D7DA" data-rgb="rgb(248, 215, 218)" data-hsl="hsl(356, 66%, 91%)">
+                            <div class="color-box" style="background-color: var(--color-ui-status-error-bg);"></div>
+                            <p class="color-name">エラーメッセージ</p>
+                            <p class="color-hex">#F8D7DA</p>
+                            <p class="color-rgb">RGB: 248, 215, 218</p>
+                            <p class="color-hsl">HSL: 356, 66%, 91%)</p>
+                        </div>
+                        <div class="color-item" data-color-name="Info Message Background" data-hex="#CCE5FF" data-rgb="rgb(204, 229, 255)" data-hsl="hsl(210, 100%, 90%)">
+                            <div class="color-box" style="background-color: var(--color-ui-status-info-bg);"></div>
+                            <p class="color-name">情報メッセージ</p>
+                            <p class="color-hex">#CCE5FF</p>
+                            <p class="color-rgb">RGB: 204, 229, 255</p>
+                            <p class="color-hsl">HSL: 210, 100%, 90%)</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar">
                 <section class="color-section">
                     <h2>HEXコード検索</h2>
                     <p>HEXコードを入力すると、その色をプレビューできます。</p>
@@ -22,138 +193,9 @@
                     </div>
                 </section>
             </aside>
-
-            <main>
-                <section class="color-section">
-                    <h2>1. ブランドカラー (コーポレートカラー) 🎨</h2>
-                    <div class="color-grid">
-                        <div class="color-item" data-color-name="Brand Red" data-hex="#E4002B">
-                            <div class="color-box" style="background-color: var(--color-brand-red);"></div>
-                            <p class="color-name">ブランドレッド</p>
-                            <p class="color-hex">#E4002B</p>
-                        </div>
-                        <div class="color-item" data-color-name="Brand Blue" data-hex="#005BAC">
-                            <div class="color-box" style="background-color: var(--color-brand-blue);"></div>
-                            <p class="color-name">ブランドブルー</p>
-                            <p class="color-hex">#005BAC</p>
-                        </div>
-                        <div class="color-item" data-color-name="White" data-hex="#FFFFFF">
-                            <div class="color-box" style="background-color: var(--color-neutral-white); border: 1px solid #ccc;"></div>
-                            <p class="color-name">ホワイト</p>
-                            <p class="color-hex">#FFFFFF</p>
-                        </div>
-                        <div class="color-item" data-color-name="Dark Gray" data-hex="#333333">
-                            <div class="color-box" style="background-color: var(--color-neutral-dark-gray);"></div>
-                            <p class="color-name">ダークグレー</p>
-                            <p class="color-hex">#333333</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="color-section">
-                    <h2>2. UIカラー (Webサイト・アプリ用) 💻</h2>
-                    <h3>2.1. テキストカラー</h3>
-                    <div class="color-grid">
-                        <div class="color-item" data-color-name="Main Text" data-hex="#333333">
-                            <div class="color-box" style="background-color: var(--color-ui-text-main);"></div>
-                            <p class="color-name">メインテキスト</p>
-                            <p class="color-hex">#333333</p>
-                        </div>
-                         <div class="color-item" data-color-name="Sub Text" data-hex="#666666">
-                            <div class="color-box" style="background-color: var(--color-ui-text-sub);"></div>
-                            <p class="color-name">サブテキスト</p>
-                            <p class="color-hex">#666666</p>
-                        </div>
-                        <div class="color-item" data-color-name="Emphasis Text" data-hex="#E4002B">
-                            <div class="color-box" style="background-color: var(--color-ui-text-emphasis);"></div>
-                            <p class="color-name">強調テキスト</p>
-                            <p class="color-hex">#E4002B</p>
-                        </div>
-                    </div>
-
-                    <h3>2.2. 背景カラー</h3>
-                    <div class="color-grid">
-                        <div class="color-item" data-color-name="Main Background" data-hex="#FFFFFF">
-                            <div class="color-box" style="background-color: var(--color-ui-bg-main); border: 1px solid #ccc;"></div>
-                            <p class="color-name">メイン背景</p>
-                            <p class="color-hex">#FFFFFF</p>
-                        </div>
-                        <div class="color-item" data-color-name="Section Background" data-hex="#F8F8F8">
-                            <div class="color-box" style="background-color: var(--color-ui-bg-section);"></div>
-                            <p class="color-name">セクション背景</p>
-                            <p class="color-hex">#F8F8F8</p>
-                        </div>
-                    </div>
-
-                    <h3>2.3. ボタンカラー</h3>
-                    <h4>プライマリボタン</h4>
-                    <div class="color-grid">
-                         <div class="color-item" data-color-name="Primary Button Normal" data-hex="#005BAC">
-                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-normal);"></div>
-                            <p class="color-name">通常</p>
-                            <p class="color-hex">#005BAC</p>
-                        </div>
-                        <div class="color-item" data-color-name="Primary Button Hover" data-hex="#004A99">
-                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-hover);"></div>
-                            <p class="color-name">ホバー</p>
-                            <p class="color-hex">#004A99</p>
-                        </div>
-                        <div class="color-item" data-color-name="Primary Button Active" data-hex="#003B80">
-                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-active);"></div>
-                            <p class="color-name">アクティブ</p>
-                            <p class="color-hex">#003B80</p>
-                        </div>
-                        <div class="color-item" data-color-name="Primary Button Disabled" data-hex="#CCCCCC">
-                            <div class="color-box" style="background-color: var(--color-ui-btn-primary-bg-disabled);"></div>
-                            <p class="color-name">無効</p>
-                            <p class="color-hex">#CCCCCC</p>
-                        </div>
-                    </div>
-
-                    <h4>セカンダリボタン</h4>
-                    <div class="color-grid">
-                         <div class="color-item" data-color-name="Secondary Button Normal" data-hex="#FFFFFF">
-                            <div class="color-box" style="background-color: var(--color-ui-btn-secondary-bg-normal); border: 1px solid var(--color-ui-btn-secondary-border-normal);"></div>
-                            <p class="color-name">通常</p>
-                            <p class="color-hex">#FFFFFF</p>
-                        </div>
-                        <div class="color-item" data-color-name="Secondary Button Hover" data-hex="#F2F2F2">
-                            <div class="color-box" style="background-color: var(--color-ui-btn-secondary-bg-hover); border: 1px solid var(--color-ui-btn-secondary-border-hover);"></div>
-                            <p class="color-name">ホバー</p>
-                            <p class="color-hex">#F2F2F2</p>
-                        </div>
-                    </div>
-
-                    <h4>危険/警告ボタン</h4>
-                    <div class="color-grid">
-                        <div class="color-item" data-color-name="Danger Button Normal" data-hex="#DC3545">
-                            <div class="color-box" style="background-color: var(--color-ui-btn-danger-bg-normal);"></div>
-                            <p class="color-name">通常</p>
-                            <p class="color-hex">#DC3545</p>
-                        </div>
-                    </div>
-
-                    <h3>2.4. 状態メッセージカラー</h3>
-                    <div class="color-grid">
-                        <div class="color-item" data-color-name="Success Message Background" data-hex="#D4EDDA">
-                            <div class="color-box" style="background-color: var(--color-ui-status-success-bg);"></div>
-                            <p class="color-name">成功メッセージ</p>
-                            <p class="color-hex">#D4EDDA</p>
-                        </div>
-                        <div class="color-item" data-color-name="Error Message Background" data-hex="#F8D7DA">
-                            <div class="color-box" style="background-color: var(--color-ui-status-error-bg);"></div>
-                            <p class="color-name">エラーメッセージ</p>
-                            <p class="color-hex">#F8D7DA</p>
-                        </div>
-                        <div class="color-item" data-color-name="Info Message Background" data-hex="#CCE5FF">
-                            <div class="color-box" style="background-color: var(--color-ui-status-info-bg);"></div>
-                            <p class="color-name">情報メッセージ</p>
-                            <p class="color-hex">#CCE5FF</p>
-                        </div>
-                    </div>
-                </section>
-            </main>
         </div>
-    </div> <script src="script.js"></script>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
