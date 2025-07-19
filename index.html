@@ -11,6 +11,17 @@
         <p>このページは、ブランドおよびUIの公式カラーパレットを定義します。</p>
     </header>
 
+    <aside class="sidebar">
+        <section class="color-section">
+            <h2>HEXコード検索</h2>
+            <p>HEXコードを入力すると、その色をプレビューできます。</p>
+            <div class="hex-input-tool">
+                <input type="text" id="hexInputSidebar" placeholder="#RRGGBB" maxlength="7">
+                <div id="hexColorPreviewSidebar" class="color-box" style="background-color: #FFFFFF; border: 1px solid #ccc;"></div>
+            </div>
+        </section>
+    </aside>
+
     <main>
         <section class="color-section">
             <h2>1. ブランドカラー (コーポレートカラー) 🎨</h2>
@@ -108,7 +119,7 @@
                 <div class="color-item" data-color-name="Secondary Button Hover" data-hex="#F2F2F2">
                     <div class="color-box" style="background-color: var(--color-ui-btn-secondary-bg-hover); border: 1px solid var(--color-ui-btn-secondary-border-hover);"></div>
                     <p class="color-name">ホバー</p>
-                    <p="color-hex">#F2F2F2</p>
+                    <p class="color-hex">#F2F2F2</p>
                 </div>
             </div>
 
