@@ -175,7 +175,7 @@ main {
     cursor: pointer;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     /* 各アイテムの高さを均一にするために最小高さを設定 (必要であれば調整) */
-    min-height: 160px; /* 例として設定。コンテンツ量によって調整してください */
+    min-height: 190px; /* 1emにすると少し大きくなるため調整 */
     justify-content: space-between; /* 上下均等配置 */
 }
 
@@ -192,83 +192,4 @@ main {
     box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
 }
 
-.color-name {
-    font-size: 0.9em;
-    font-weight: bold;
-    margin: 4px 0;
-    color: var(--color-ui-text-main);
-}
-
-/* ここを修正：すべてのコード表示要素に統一スタイルを適用 */
-.color-hex,
-.color-rgb,
-.color-hsl {
-    font-family: 'Roboto Mono', 'Courier New', monospace; /* プログラミング用フォント */
-    font-size: 0.75em; /* 統一されたフォントサイズ */
-    color: var(--color-ui-text-sub);
-    margin: 2px 0; /* 行間を調整 */
-    line-height: 1.2; /* 行の高さを調整 */
-    word-break: break-all; /* 長いコードでも折り返す */
-}
-
-/* コピー成功時のフィードバック */
-.color-item.copied {
-    background-color: #e6ffe6;
-    border-color: #4CAF50;
-}
-
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    header {
-        margin-bottom: 15px;
-        padding: 15px;
-        width: 100%;
-        max-width: none;
-    }
-    .content-wrapper {
-        flex-direction: column;
-        padding: 0 15px 15px 15px;
-        width: 100%;
-        max-width: none;
-    }
-    main {
-        order: 1;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        margin-bottom: 0;
-        position: static;
-        top: auto;
-        margin-right: 0;
-        border-radius: 6px 6px 0 0;
-        order: 2;
-        border-left: none;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    .color-grid {
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-        gap: 10px;
-    }
-    .color-item {
-        padding: 5px;
-        min-height: 140px; /* レスポンシブ時の最小高さも調整 */
-    }
-    .color-box {
-        width: 35px;
-        height: 35px;
-    }
-    .color-name {
-        font-size: 0.8em;
-    }
-    /* レスポンシブ時のコードフォントサイズ調整 */
-    .color-hex,
-    .color-rgb,
-    .color-hsl {
-        font-size: 0.65em;
-    }
-}
+.
