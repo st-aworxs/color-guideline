@@ -36,16 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
     colorItems.forEach(item => {
         item.addEventListener('click', (event) => {
             let textToCopy = '';
-            // クリックされた要素がどのコード表示要素か判定
+            
+            // クリックされた要素が .color-hex, .color-rgb, .color-hsl のいずれかであれば、そのテキストをコピー
+            // そうでなければ、color-item自体のdata-hexをデフォルトでコピー
             if (event.target.classList.contains('color-hex')) {
-                textToCopy = item.dataset.hex;
+                textToCopy = event.target.textContent; // 直接テキストコンテンツを取得
             } else if (event.target.classList.contains('color-rgb')) {
-                textToCopy = item.dataset.rgb;
+                textToCopy = event.target.textContent.replace('RGB: ', ''); // "RGB: "を削除してコピー
             } else if (event.target.classList.contains('color-hsl')) {
-                textToCopy = item.dataset.hsl;
+                textToCopy = event.target.textContent.replace('HSL: ', ''); // "HSL: "を削除してコピー
             } else {
-                // デフォルトはHEXコードをコピー
-                textToCopy = item.dataset.hex;
+                // color-boxやcolor-nameなど、コード以外の部分がクリックされた場合はHEXコードをコピー
+                textToCopy = item.querySelector('.color-hex').textContent; 
             }
 
             if (textToCopy) {
