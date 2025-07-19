@@ -15,7 +15,7 @@
 
   /* テキストカラー */
   --color-ui-text-main: #333333;
-  --color-ui-text-sub: #666666;
+  --color-ui-text-sub: #666666; /* この変数は他の場所でも使われているため、直接#999999から変更しない */
   --color-ui-text-emphasis: #E4002B;
 
   /* 背景カラー */
@@ -205,7 +205,7 @@ main {
 .color-hsl {
     font-family: 'Courier New', monospace; /* 等幅フォントで統一 */
     font-size: 0.8em; /* 0.8emに統一 */
-    color: #999999; /* 色を少し薄く (#666666から変更) */
+    color: #777777; /* 色を少し濃く (#999999から変更) */
     margin: 2px 0; /* 行間を調整 */
     line-height: 1.2; /* 行の高さを調整 */
     word-break: break-all; /* 長いコードでも折り返す */
@@ -249,31 +249,4 @@ main {
         position: static;
         top: auto;
         margin-right: 0;
-        border-radius: 6px 6px 0 0;
-        order: 2;
-        border-left: none;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-    .color-grid {
-        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-        gap: 10px;
-    }
-    .color-item {
-        padding: 5px;
-        min-height: 150px; /* レスポンシブ時の最小高さも調整 */
-    }
-    .color-box {
-        width: 35px;
-        height: 35px;
-    }
-    .color-name {
-        font-size: 0.8em;
-    }
-    /* レスポンシブ時のコードフォントサイズ調整 */
-    .color-hex,
-    .color-rgb,
-    .color-hsl {
-        font-size: 0.75em; /* レスポンシブ時は少し小さめに */
-        padding: 0 3px; /* レスポンシブ時はパディングも小さく */
-    }
-}
+        border-radius: 6px 6
