@@ -140,4 +140,140 @@ main {
 #hexInputSidebar {
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius
+    border-radius: 4px;
+    font-size: 0.9em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#hexColorPreviewSidebar {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* カラーグリッドの共通スタイル */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.color-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: var(--color-neutral-white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    /* 各アイテムの高さを均一にするために最小高さを設定 (必要であれば調整) */
+    min-height: 170px; /* フォントサイズが小さくなるため、少し調整 */
+    justify-content: space-between; /* 上下均等配置 */
+}
+
+.color-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.color-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    margin-bottom: 8px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.15);
+}
+
+.color-name {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 4px 0;
+    color: var(--color-ui-text-main);
+}
+
+/* ここを修正：すべてのコード表示要素に統一スタイルを適用 */
+.color-hex,
+.color-rgb,
+.color-hsl {
+    font-family: 'Courier New', monospace; /* 等幅フォントで統一 */
+    font-size: 0.8em; /* 0.8emに統一 */
+    color: #999999; /* 色を少し薄く (#666666から変更) */
+    margin: 2px 0; /* 行間を調整 */
+    line-height: 1.2; /* 行の高さを調整 */
+    word-break: break-all; /* 長いコードでも折り返す */
+    text-align: left; /* 左寄せ */
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    padding: 0 5px; /* 左右に少しパディングを追加して見やすく */
+    box-sizing: border-box; /* パディングを幅に含める */
+}
+
+/* コピー成功時のフィードバック */
+.color-item.copied {
+    background-color: #e6ffe6;
+    border-color: #4CAF50;
+}
+
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    header {
+        margin-bottom: 15px;
+        padding: 15px;
+        width: 100%;
+        max-width: none;
+    }
+    .content-wrapper {
+        flex-direction: column;
+        padding: 0 15px 15px 15px;
+        width: 100%;
+        max-width: none;
+    }
+    main {
+        order: 1;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 0;
+        position: static;
+        top: auto;
+        margin-right: 0;
+        border-radius: 6px 6px 0 0;
+        order: 2;
+        border-left: none;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .color-grid {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 10px;
+    }
+    .color-item {
+        padding: 5px;
+        min-height: 150px; /* レスポンシブ時の最小高さも調整 */
+    }
+    .color-box {
+        width: 35px;
+        height: 35px;
+    }
+    .color-name {
+        font-size: 0.8em;
+    }
+    /* レスポンシブ時のコードフォントサイズ調整 */
+    .color-hex,
+    .color-rgb,
+    .color-hsl {
+        font-size: 0.75em; /* レスポンシブ時は少し小さめに */
+        padding: 0 3px; /* レスポンシブ時はパディングも小さく */
+    }
+}
