@@ -64,50 +64,64 @@ body {
     min-height: 100vh;
 }
 
-.main-content-wrapper { /* bodyの直接の子要素で、全体をラップする */
+.main-content-wrapper {
     display: flex;
-    flex-direction: column; /* ヘッダーとその下のコンテンツを縦に並べる */
+    flex-direction: column;
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
+    /* ここを修正：全体のコンテンツを中央に配置 */
+    align-items: center; /* Flexアイテム（headerとcontent-wrapper）を中央に寄せる */
 }
 
 header {
     text-align: center;
     padding: 20px;
     border-bottom: 1px solid #eee;
-    margin-bottom: 20px; /* content-wrapper との間隔 */
+    margin-bottom: 20px;
     background-color: var(--color-ui-bg-section);
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    flex-shrink: 0; /* ヘッダーが縮まないようにする */
+    flex-shrink: 0;
+    width: calc(100% - 40px); /* content-wrapperのパディングを考慮して幅を設定 */
+    max-width: 1200px; /* 必要に応じて最大幅を設定 */
+    box-sizing: border-box; /* パディングを幅に含める */
 }
 
-.content-wrapper { /* サイドバーとメインコンテンツを横並びにするFlexboxコンテナ */
+.content-wrapper {
     display: flex;
-    padding: 0 20px 20px 20px; /* 左右と下部のパディング */
-    flex-grow: 1; /* 残りの高さを占める */
-    width: 100%;
+    /* メインコンテンツとサイドバーの順序をここで制御 */
+    flex-direction: row; /* 横並びを明示的に指定 */
+    padding: 0 20px 20px 20px;
+    flex-grow: 1;
+    width: calc(100% - 40px); /* main-content-wrapperの左右パディングを考慮 */
+    max-width: 1200px; /* headerと同じ最大幅を設定 */
     box-sizing: border-box;
-    align-items: flex-start; /* 上端に揃える */
+    align-items: flex-start;
+}
+
+main {
+    flex-grow: 1;
+    padding: 0;
+    /* ここを修正：メインコンテンツとサイドバーの順序変更 */
+    order: 1; /* mainを先に表示（左側） */
+    margin-right: 30px; /* サイドバーとの間隔 */
 }
 
 .sidebar {
     width: 250px;
     padding: 20px;
     background-color: var(--color-ui-bg-section);
-    border-right: 1px solid #eee;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-    height: fit-content; /* 内容に合わせて高さを調整 */
-    position: sticky;    /* これでスクロール追従 */
-    top: 20px;           /* 画面上端から20pxのところで固定開始 */
-    align-self: flex-start; /* Flexアイテムとして上端に揃える */
-    margin-right: 30px; /* メインコンテンツとの間隔 */
+    border-left: 1px solid #eee; /* 左側に境界線 */
+    border-right: none; /* 元の右側の境界線を削除 */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.05); /* シャドウの方向を調整 */
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    /* ここを修正：メインコンテンツとサイドバーの順序変更 */
+    order: 2; /* sidebarを後から表示（右側） */
+    margin-right: 0; /* 元のmargin-rightを削除 */
     border-radius: 6px;
-}
-
-main {
-    flex-grow: 1; /* 残りのスペースをメインコンテンツが占める */
-    padding: 0;
 }
 
 .color-section {
@@ -201,27 +215,35 @@ main {
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-    /* main-content-wrapper はデフォルトで縦並びになるので調整不要 */
     header {
         margin-bottom: 15px;
         padding: 15px;
+        width: 100%; /* レスポンシブ時は幅いっぱい */
+        max-width: none; /* 最大幅を解除 */
     }
     .content-wrapper {
         flex-direction: column; /* 縦並びに戻す */
         padding: 0 15px 15px 15px;
+        width: 100%; /* レスポンシブ時は幅いっぱい */
+        max-width: none; /* 最大幅を解除 */
+    }
+    main {
+        order: 1; /* レスポンシブ時はmainが上 */
+        margin-right: 0; /* マージンを解除 */
+        margin-bottom: 20px; /* サイドバーとの間隔 */
     }
     .sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #eee;
-        margin-bottom: 20px;
+        margin-bottom: 0; /* mainとの間隔はmainが持つ */
         position: static; /* レスポンシブ時はstickyを解除 */
         top: auto;
         margin-right: 0;
         border-radius: 6px 6px 0 0;
-    }
-    main {
-        padding: 0;
+        order: 2; /* レスポンシブ時はsidebarが下 */
+        border-left: none; /* 左側の境界線を解除 */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* シャドウを通常に */
     }
     .color-grid {
         grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
